@@ -10,7 +10,7 @@ body{background:var(--stone);color:var(--ink);font-family:"Avenir Next","Avenir"
 .didot{font-family:Didot,"Bodoni 72","Playfair Display",Georgia,serif;font-weight:400}
 .wrap{max-width:680px;margin:0 auto;padding:0 22px}
 header{background:var(--ink);color:#fff;padding:44px 0 40px;text-align:center}
-header img.face{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center 20%;border:2px solid #fff}
+header img.face{width:104px;height:104px;border-radius:0;object-fit:cover;object-position:center 20%;border:2px solid #fff}
 header h1{font-size:34px;letter-spacing:.12em;margin-top:18px}
 header .sub{font-size:11px;letter-spacing:.28em;color:#a49d90;margin-top:10px;text-transform:uppercase}
 .hero{padding:42px 0 8px;text-align:center}
@@ -52,9 +52,36 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
     <div class="card"><h3>Paid Placement on REW</h3><p>Boosted exposure on rew.ca, one of BC's busiest real estate search sites.</p></div>
     <div class="card"><h3>Targeted Online Advertising</h3><p>Paid social and search campaigns aimed at the buyers most likely to want your specific home, not just anyone.</p></div>
     <div class="card"><h3>Just Listed Mailouts</h3><p>Printed announcements to the surrounding neighbourhood. The buyer is often a neighbour's friend or family member.</p></div>
+    <div class="card"><h3>Custom Feature Sheets</h3><p>Beautifully designed print media in your home for every showing. Buyers take them, and your home stays memorable.</p></div>
     <div class="card"><h3>Honest Pricing Strategy</h3><p>A written pricing and relaunch plan based on live market data, and the straight truth about what went wrong the first time.</p></div>
   </div>
-  <div class="honest"><p class="didot">"If I do not believe I can get your home sold, I will tell you that too."</p></div>
+
+  <div class="hero" style="padding-top:38px">
+    <h2 class="didot" style="font-size:24px">This is what buyers see.</h2>
+    <p style="margin-top:8px">Real examples from my recent listings.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+    <img src="photo1.jpg" style="width:100%;display:block" alt="Professional listing photography">
+    <img src="photo2.jpg" style="width:100%;display:block" alt="Professional listing photography">
+    <img src="photo3.jpg" style="width:100%;display:block" alt="Professional listing photography">
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
+    <div class="card" style="padding:14px;text-align:center">
+      <video controls playsinline preload="metadata" style="width:100%;max-height:420px;background:#000" src="reel.mp4"></video>
+      <p style="font-size:12px;color:#766f64;margin-top:8px">Cinematic video and social reels for every listing</p>
+    </div>
+    <div class="card" style="padding:14px;text-align:center">
+      <img src="floorplan.jpg" style="width:100%;display:block" alt="Professional floor plan">
+      <p style="font-size:12px;color:#766f64;margin-top:8px">Laser-measured professional floor plans</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px;padding:14px;display:flex;gap:16px;align-items:center">
+    <img src="featuresheet.jpg" style="width:38%;display:block;border:1px solid #ddd6c9" alt="Printed feature sheet">
+    <div><h3 style="font-size:15px">Beautiful Print Media</h3>
+    <p style="font-size:13.5px;line-height:1.55;color:#766f64;margin-top:6px">Custom-designed feature sheets and print
+    materials for your home, so every buyer who walks through leaves with something worth keeping.</p></div>
+  </div>
+
   <div class="card" style="margin-top:36px;text-align:center;padding:30px 24px">
     <h3 class="didot" style="font-size:24px;letter-spacing:.02em">What is your home worth today?</h3>
     <p style="margin-top:10px;font-size:14.5px">The market has moved since you listed. Tell me your address and I will send you an
