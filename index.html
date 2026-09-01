@@ -8,26 +8,41 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--stone);color:var(--ink);font-family:"Avenir Next","Avenir",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .didot{font-family:Didot,"Bodoni 72","Playfair Display",Georgia,serif;font-weight:400}
-.wrap{max-width:680px;margin:0 auto;padding:0 22px}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
 header{background:var(--ink);color:#fff;padding:44px 0 40px;text-align:center}
-header img.face{width:104px;height:104px;border-radius:0;object-fit:cover;object-position:center 20%;border:2px solid #fff}
+header img.face{width:96px;height:118px;object-fit:cover;object-position:center 18%;border:2px solid #fff}
 header h1{font-size:34px;letter-spacing:.12em;margin-top:18px}
 header .sub{font-size:11px;letter-spacing:.28em;color:#a49d90;margin-top:10px;text-transform:uppercase}
-.hero{padding:42px 0 8px;text-align:center}
+.hero{padding:42px 0 6px;text-align:center}
 .hero h2{font-size:30px;line-height:1.25}
 .hero p{margin-top:14px;color:var(--muted);font-size:16px;line-height:1.55}
-.grid{padding:30px 0 6px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sec{margin-top:46px;text-align:center}
+.sec .k{font-size:11px;font-weight:600;letter-spacing:.32em;color:var(--muted);text-transform:uppercase}
+.sec h2{font-size:25px;margin-top:8px}
+.sec .d{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.55}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.pgrid img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover}
+.pgrid img.wide{grid-column:1/-1;aspect-ratio:21/10}
+@media(max-width:560px){.pgrid{grid-template-columns:1fr}}
+.mediacard{background:#fff;border:1px solid #ddd6c9;padding:14px;margin-top:18px}
+video{width:100%;max-width:380px;max-height:560px;background:#000;display:block;margin:0 auto}
+.fp img{width:100%;display:block}
+.print{display:flex;gap:18px;align-items:center;text-align:left}
+.print img{width:40%;display:block;border:1px solid #ddd6c9}
+.print p{font-size:14px;line-height:1.6;color:var(--muted)}
+.grid{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;text-align:left}
 @media(max-width:560px){.grid{grid-template-columns:1fr}}
 .card{background:#fff;border:1px solid #ddd6c9;padding:20px 18px}
 .card h3{font-size:15px;letter-spacing:.04em;margin-bottom:7px}
 .card p{font-size:13.5px;line-height:1.5;color:var(--muted)}
-.honest{margin:36px 0 0;background:var(--ink);color:#fff;padding:30px 26px;text-align:center}
-.honest p{font-size:20px;line-height:1.45}
-.honest .didot{font-size:22px}
-.cta{padding:40px 0 20px;text-align:center}
+.value{margin-top:46px;background:#fff;border:1px solid #ddd6c9;text-align:center;padding:32px 24px}
+.value h3{font-size:24px}
+.value p{margin-top:10px;font-size:14.5px;line-height:1.55}
+.value a{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:15px 34px;font-size:15px;letter-spacing:.06em;margin-top:16px}
+.cta{padding:40px 0 16px;text-align:center}
 .cta a.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:16px 30px;font-size:15px;letter-spacing:.06em;margin:6px}
 .cta a.btn.alt{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
-.creds{display:flex;align-items:center;justify-content:center;gap:26px;padding:26px 0 8px}
+.creds{display:flex;align-items:center;justify-content:center;gap:26px;padding:24px 0 8px}
 .creds img{height:74px}
 footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px;line-height:1.6}
 </style></head>
@@ -42,56 +57,67 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
 <div class="wrap">
   <div class="hero">
     <h2 class="didot">Here is exactly how I get homes sold.</h2>
-    <p>No mystery, no shortcuts. Every listing I take gets the full treatment below, included with my service. This is what your home's second launch should look like.</p>
-  </div>
-  <div class="grid">
-    <div class="card"><h3>Professional Photography</h3><p>Magazine-quality photos shot by a professional. First impressions happen online, and they happen in about three seconds.</p></div>
-    <div class="card"><h3>Cinematic Video Tour</h3><p>A full video tour plus a social media reel, so your home shows beautifully everywhere buyers scroll.</p></div>
-    <div class="card"><h3>Laser Measurements &amp; Floor Plan</h3><p>Accurate professional measurements and a clean floor plan. Serious buyers want the numbers, and we give them confidently.</p></div>
-    <div class="card"><h3>Paid Placement on REALTOR.ca</h3><p>Featured positioning where every buyer in Canada looks first, not just the free listing everyone else gets.</p></div>
-    <div class="card"><h3>Paid Placement on REW</h3><p>Boosted exposure on rew.ca, one of BC's busiest real estate search sites.</p></div>
-    <div class="card"><h3>Targeted Online Advertising</h3><p>Paid social and search campaigns aimed at the buyers most likely to want your specific home, not just anyone.</p></div>
-    <div class="card"><h3>Just Listed Mailouts</h3><p>Printed announcements to the surrounding neighbourhood. The buyer is often a neighbour's friend or family member.</p></div>
-    <div class="card"><h3>Custom Feature Sheets</h3><p>Beautifully designed print media in your home for every showing. Buyers take them, and your home stays memorable.</p></div>
-    <div class="card"><h3>Honest Pricing Strategy</h3><p>A written pricing and relaunch plan based on live market data, and the straight truth about what went wrong the first time.</p></div>
+    <p>No mystery, no shortcuts. Every listing gets the full treatment below, included with my service. This is what your home's second launch should look like.</p>
   </div>
 
-  <div class="hero" style="padding-top:38px">
-    <h2 class="didot" style="font-size:24px">This is what buyers see.</h2>
-    <p style="margin-top:8px">Real examples from my recent listings.</p>
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
-    <img src="photo1.jpg" style="width:100%;display:block" alt="Professional listing photography">
-    <img src="photo2.jpg" style="width:100%;display:block" alt="Professional listing photography">
-    <img src="photo3.jpg" style="width:100%;display:block" alt="Professional listing photography">
-  </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
-    <div class="card" style="padding:14px;text-align:center">
-      <video controls playsinline preload="metadata" style="width:100%;max-height:420px;background:#000" src="reel.mp4"></video>
-      <p style="font-size:12px;color:#766f64;margin-top:8px">Cinematic video and social reels for every listing</p>
+  <div class="sec">
+    <div class="k">Professional Photography</div>
+    <h2 class="didot">This is what buyers see first.</h2>
+    <div class="d">Real photography from my recent listings. First impressions happen online, in about three seconds.</div>
+    <div class="pgrid">
+      <img class="wide" src="g1.jpg" alt="Estate home exterior">
+      <img src="g2.jpg" alt="Gated driveway">
+      <img src="g3.jpg" alt="Pool and patio">
+      <img src="g4.jpg" alt="Great room">
+      <img src="g5.jpg" alt="Designer kitchen">
     </div>
-    <div class="card" style="padding:14px;text-align:center">
-      <img src="floorplan.jpg" style="width:100%;display:block" alt="Professional floor plan">
-      <p style="font-size:12px;color:#766f64;margin-top:8px">Laser-measured professional floor plans</p>
-    </div>
-  </div>
-  <div class="card" style="margin-top:14px;padding:14px;display:flex;gap:16px;align-items:center">
-    <img src="featuresheet.jpg" style="width:38%;display:block;border:1px solid #ddd6c9" alt="Printed feature sheet">
-    <div><h3 style="font-size:15px">Beautiful Print Media</h3>
-    <p style="font-size:13.5px;line-height:1.55;color:#766f64;margin-top:6px">Custom-designed feature sheets and print
-    materials for your home, so every buyer who walks through leaves with something worth keeping.</p></div>
   </div>
 
-  <div class="card" style="margin-top:36px;text-align:center;padding:30px 24px">
-    <h3 class="didot" style="font-size:24px;letter-spacing:.02em">What is your home worth today?</h3>
-    <p style="margin-top:10px;font-size:14.5px">The market has moved since you listed. Tell me your address and I will send you an
-    honest, up-to-date value report. Free, no pressure, no obligation.</p>
-    <a href="https://russelldudar.com/home-value?utm_source=expired-letter&utm_medium=qr" style="display:inline-block;background:#0f0f0e;color:#fff;text-decoration:none;padding:15px 34px;font-size:15px;letter-spacing:.06em;margin-top:16px;font-family:'Avenir Next',Helvetica,sans-serif">Get My Home Value</a>
+  <div class="sec">
+    <div class="k">Cinematic Video Tour</div>
+    <h2 class="didot">Your home, everywhere buyers scroll.</h2>
+    <div class="d">A full video tour plus social reels for every listing. Press play, this is a real one.</div>
+    <div class="mediacard"><video controls playsinline preload="metadata" src="reel.mp4"></video></div>
   </div>
+
+  <div class="sec">
+    <div class="k">Floor Plans &amp; Measurements</div>
+    <h2 class="didot">Serious buyers want the numbers.</h2>
+    <div class="d">Laser-measured professional floor plans with every listing, so buyers can picture living there.</div>
+    <div class="mediacard fp"><img src="floorplan.jpg" alt="Professional floor plan"></div>
+  </div>
+
+  <div class="sec">
+    <div class="k">Beautiful Print Media</div>
+    <h2 class="didot">Something worth taking home.</h2>
+    <div class="mediacard print">
+      <img src="featuresheet.jpg" alt="Printed feature sheet">
+      <p>Custom-designed feature booklets and sheets in your home for every showing. Buyers walk out with your home in their hands, and it stays memorable long after the open house.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="k">And the rest of the machine</div>
+    <h2 class="didot">Exposure, everywhere it counts.</h2>
+    <div class="grid">
+      <div class="card"><h3>Drone &amp; Aerial Photography</h3><p>Aerial shots that show off the lot, the neighbourhood, and the setting no ground photo can capture.</p></div>
+      <div class="card"><h3>Paid Placement on REALTOR.ca</h3><p>Featured positioning where every buyer in Canada looks first, not just the free listing everyone else gets.</p></div>
+      <div class="card"><h3>Paid Placement on REW</h3><p>Boosted exposure on rew.ca, one of BC's busiest real estate search sites.</p></div>
+      <div class="card"><h3>Targeted Online Advertising</h3><p>Paid social and search campaigns aimed at the buyers most likely to want your specific home.</p></div>
+      <div class="card"><h3>Just Listed Mailouts</h3><p>Printed announcements to the surrounding neighbourhood. The buyer is often a neighbour's friend or family member.</p></div>
+      <div class="card"><h3>Honest Pricing Strategy</h3><p>A written pricing and relaunch plan based on live market data, and the straight truth about what went wrong the first time.</p></div>
+    </div>
+  </div>
+
+  <div class="value">
+    <h3 class="didot">What is your home worth today?</h3>
+    <p>The market has moved since you listed. Tell me your address and I will send you an honest, up-to-date value report. Free, no pressure, no obligation.</p>
+    <a href="https://russelldudar.com/home-value?utm_source=expired-letter&utm_medium=qr">Get My Home Value</a>
+  </div>
+
   <div class="cta">
     <a class="btn" href="tel:7788681406">Call or Text 778-868-1406</a>
     <a class="btn alt" href="mailto:russelldudar@royallepage.ca">Email Russell</a>
-    <a class="btn alt" href="https://russelldudar.com/home-value?utm_source=expired-letter&utm_medium=qr">Free Home Value Report</a>
   </div>
   <div class="creds">
     <img src="top10.png" alt="Royal LePage National Top 10% 2025">
