@@ -57,7 +57,7 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
 <div class="wrap">
   <div class="hero">
     <h2 class="didot">Here is exactly how I get homes sold.</h2>
-    <p>No mystery, no shortcuts. Every listing gets the full treatment below, included with my service. This is what your home's second launch should look like.</p>
+    <p>No mystery, no shortcuts. Every listing gets the full treatment below, included with my service.</p>
   </div>
 
   <div class="sec">
@@ -66,8 +66,8 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
     <div class="d">Real photography from my recent listings. First impressions happen online, in about three seconds.</div>
     <div class="pgrid">
       <img class="wide" src="g1.jpg" alt="Estate home exterior">
-      <img src="g2.jpg" alt="Gated driveway">
-      <img src="g3.jpg" alt="Pool and patio">
+      <img src="g2.jpg" alt="Backyard pool and deck">
+      <img src="g3.jpg" alt="Covered patio">
       <img src="g4.jpg" alt="Great room">
       <img src="g5.jpg" alt="Designer kitchen">
     </div>
@@ -90,10 +90,13 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
   <div class="sec">
     <div class="k">Beautiful Print Media</div>
     <h2 class="didot">Something worth taking home.</h2>
-    <div class="mediacard print">
-      <img src="featuresheet.jpg" alt="Printed feature sheet">
-      <p>Custom-designed feature booklets and sheets in your home for every showing. Buyers walk out with your home in their hands, and it stays memorable long after the open house.</p>
+    <div class="d">A custom feature booklet, designed and printed for your home. This is a real one, flipping through.</div>
+    <div class="mediacard" style="max-width:440px;margin-left:auto;margin-right:auto;margin-top:18px">
+      <div id="book" style="position:relative;width:100%;aspect-ratio:654/834;background:#fff">
+        <img id="bookimg" src="bk1.jpg" style="width:100%;height:100%;object-fit:contain;display:block;transition:opacity .45s">
+      </div>
     </div>
+    <p style="font-size:13.5px;color:#766f64;margin-top:12px">Buyers walk out of every showing with your home in their hands, and it stays memorable long after the open house.</p>
   </div>
 
   <div class="sec">
@@ -137,6 +140,20 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
   fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json"},
     body:JSON.stringify({access_key:KEY,subject:"QR scan: expired letter marketing page",
     from_name:"QR Tracker",message:"Someone scanned the expired-letter QR code and viewed the marketing page. "+new Date().toString()})}).catch(function(){});
+})();
+</script>
+<script>
+(function(){
+  var n = 12, i = 1, img = document.getElementById("bookimg");
+  for (var k = 2; k <= n; k++) { (new Image()).src = "bk" + k + ".jpg"; }
+  setInterval(function(){
+    img.style.opacity = 0;
+    setTimeout(function(){
+      i = i % n + 1;
+      img.src = "bk" + i + ".jpg";
+      img.style.opacity = 1;
+    }, 450);
+  }, 2600);
 })();
 </script>
 </body></html>
