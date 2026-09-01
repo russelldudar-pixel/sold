@@ -94,11 +94,10 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
     <div class="mediacard" style="max-width:440px;margin-left:auto;margin-right:auto;margin-top:18px">
       <div id="book" style="position:relative;width:100%;aspect-ratio:654/834;background:#fff">
         <img id="bookimg" src="bk1.jpg" style="width:100%;height:100%;object-fit:contain;display:block;transition:opacity .45s">
+        <button id="bprev" aria-label="Previous page" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);width:40px;height:40px;border:none;border-radius:50%;background:rgba(15,15,14,.55);color:#fff;font-size:20px;cursor:pointer">&#8249;</button>
+        <button id="bnext" aria-label="Next page" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:40px;height:40px;border:none;border-radius:50%;background:rgba(15,15,14,.55);color:#fff;font-size:20px;cursor:pointer">&#8250;</button>
+        <div id="bdots" style="position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:11px;letter-spacing:.18em;color:#766f64;background:rgba(255,255,255,.7);padding:3px 0"></div>
       </div>
-    </div>
-    <div style="display:flex;gap:16px;align-items:center;margin-top:16px;text-align:left;max-width:440px;margin-left:auto;margin-right:auto">
-      <img src="real1.jpg" style="width:42%;display:block;border:1px solid #ddd6c9" alt="The printed feature booklet">
-      <p style="font-size:13.5px;line-height:1.6;color:#766f64">The real thing. Printed and waiting in the home for every showing, so buyers walk out with your home in their hands.</p>
     </div>
   </div>
 
@@ -117,7 +116,7 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
 
   <div class="value">
     <h3 class="didot">What is your home worth today?</h3>
-    <p>The market has moved since you listed. Tell me your address and I will send you an honest, up-to-date value report. Free, no pressure, no obligation.</p>
+    <p>Tell me your address and I will send you an honest, up-to-date value report. Free, no pressure, no obligation.</p>
     <a href="https://russelldudar.com/home-value?utm_source=expired-letter&utm_medium=qr">Get My Home Value</a>
   </div>
 
@@ -148,19 +147,23 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
 <script>
 (function(){
   var n = 12, i = 1, img = document.getElementById("bookimg"), timer = null;
+  var dots = document.getElementById("bdots");
   for (var k = 2; k <= n; k++) { (new Image()).src = "bk" + k + ".jpg"; }
+  function show(idx){
+    i = ((idx - 1 + n) % n) + 1;
+    img.style.opacity = 0;
+    setTimeout(function(){ img.src = "bk" + i + ".jpg"; img.style.opacity = 1; }, 300);
+    dots.textContent = "PAGE " + i + " OF " + n;
+  }
   function start(){
     if (timer) return;
-    i = 1; img.src = "bk1.jpg";
-    timer = setInterval(function(){
-      img.style.opacity = 0;
-      setTimeout(function(){
-        i = i % n + 1;
-        img.src = "bk" + i + ".jpg";
-        img.style.opacity = 1;
-      }, 450);
-    }, 2600);
+    show(1);
+    timer = setInterval(function(){ show(i + 1); }, 2600);
   }
+  function stopAuto(){ if (timer) { clearInterval(timer); timer = "off"; } }
+  document.getElementById("bprev").addEventListener("click", function(){ stopAuto(); show(i - 1); });
+  document.getElementById("bnext").addEventListener("click", function(){ stopAuto(); show(i + 1); });
+  dots.textContent = "PAGE 1 OF " + n;
   var obs = new IntersectionObserver(function(es){
     es.forEach(function(e){ if (e.isIntersecting) { start(); obs.disconnect(); } });
   }, {threshold: 0.4});
