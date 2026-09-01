@@ -77,7 +77,7 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
     <div class="k">Cinematic Video Tour</div>
     <h2 class="didot">Your home, everywhere buyers scroll.</h2>
     <div class="d">A full video tour plus social reels for every listing. Press play, this is a real one.</div>
-    <div class="mediacard"><video controls playsinline preload="metadata" src="reel.mp4"></video></div>
+    <video controls playsinline preload="metadata" src="reel.mp4" style="margin-top:18px"></video>
   </div>
 
   <div class="sec">
@@ -96,7 +96,10 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
         <img id="bookimg" src="bk1.jpg" style="width:100%;height:100%;object-fit:contain;display:block;transition:opacity .45s">
       </div>
     </div>
-    <p style="font-size:13.5px;color:#766f64;margin-top:12px">Buyers walk out of every showing with your home in their hands, and it stays memorable long after the open house.</p>
+    <div style="display:flex;gap:16px;align-items:center;margin-top:16px;text-align:left;max-width:440px;margin-left:auto;margin-right:auto">
+      <img src="real1.jpg" style="width:42%;display:block;border:1px solid #ddd6c9" alt="The printed feature booklet">
+      <p style="font-size:13.5px;line-height:1.6;color:#766f64">The real thing. Printed and waiting in the home for every showing, so buyers walk out with your home in their hands.</p>
+    </div>
   </div>
 
   <div class="sec">
@@ -144,16 +147,24 @@ footer{padding:26px 0 42px;text-align:center;color:var(--muted);font-size:11.5px
 </script>
 <script>
 (function(){
-  var n = 12, i = 1, img = document.getElementById("bookimg");
+  var n = 12, i = 1, img = document.getElementById("bookimg"), timer = null;
   for (var k = 2; k <= n; k++) { (new Image()).src = "bk" + k + ".jpg"; }
-  setInterval(function(){
-    img.style.opacity = 0;
-    setTimeout(function(){
-      i = i % n + 1;
-      img.src = "bk" + i + ".jpg";
-      img.style.opacity = 1;
-    }, 450);
-  }, 2600);
+  function start(){
+    if (timer) return;
+    i = 1; img.src = "bk1.jpg";
+    timer = setInterval(function(){
+      img.style.opacity = 0;
+      setTimeout(function(){
+        i = i % n + 1;
+        img.src = "bk" + i + ".jpg";
+        img.style.opacity = 1;
+      }, 450);
+    }, 2600);
+  }
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { start(); obs.disconnect(); } });
+  }, {threshold: 0.4});
+  obs.observe(document.getElementById("book"));
 })();
 </script>
 </body></html>
